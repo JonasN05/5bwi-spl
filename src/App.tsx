@@ -1,5 +1,5 @@
-import Card from "./components/Card"
 import './App.css'
+import PeopleContainer from "./components/PeopleContainer.tsx"
 
 function App() {
 
@@ -7,15 +7,13 @@ function App() {
     <body className="bg-background h-full">
 
       <header className="flex justify-end h-20 p-20">
-
-        <p className="text-white font-bold text-4xl">
+        <p className="text-white text-7xl font-headFont">
           HTL Dornbirn 5bWI
         </p>
       </header>
 
-      <div className="">
-        <Card name="Jonas" description="Schüler" imageUrl="https://picsum.photos/200/300" />
-        <Card name="Diego" description="Schüler" imageUrl="https://picsum.photos/200/300" />
+      <div className="w-full p-20">
+        <PeopleContainer />
 
       </div>
     </body >
