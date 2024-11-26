@@ -7,8 +7,8 @@ type Props = {
 
 export default function Card({ name, description, imageUrl }: Props) {
     return (
-        <div className="h-96 rounded-lg relative bg-backgroundCard">
-            <div className="w-full">
+        <div className="min-h-96 rounded-lg bg-backgroundCard ">
+            <div className="w-full ">
                 <img src={imageUrl} alt="" className="w-full h-56 object-cover rounded-t-lg" />
             </div>
 

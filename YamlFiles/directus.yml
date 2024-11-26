@@ -14,7 +14,12 @@ services:
       ADMIN_EMAIL: "admin@example.com"
       ADMIN_PASSWORD: "d1r3ctu5"
       DIRECTUS_ADMIN_FIRSTNAME: Admin
-      DIRECTUS_ADMIN_LASTNAME: User    
+      DIRECTUS_ADMIN_LASTNAME: User
+      CORS_ENABLED: true
+      CORS_ORIGIN: *
+      CORS_METHODS: GET,POST,PATCH,DELETE
+      CORS_ALLOWED_HEADERS: Content-Type,Authorization
+      CORS_EXPOSED_HEADERS: Content-Range  
     ports:
       - "8055:8055"
     depends_on:
