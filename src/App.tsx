@@ -4,7 +4,7 @@ import PeopleContainer from "./components/PeopleContainer.tsx"
 function App() {
 
   return (
-    <body className="bg-background h-full">
+    <body className="bg-background min-h-[100vh]">
 
       <header className="flex justify-center h-20 p-20 md:justify-end lg:justify-end">
         <p className="text-white text-5xl font-headFont md:text-7xl lg:text-7xl">
@@ -14,7 +14,6 @@ function App() {
 
       <div className="w-full p-20">
         <PeopleContainer />
-
       </div>
     </body >
   )
