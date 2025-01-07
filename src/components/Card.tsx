@@ -20,8 +20,6 @@ export default function Card({ name, description, imageUrl }: Props) {
                     {description}
                 </div>
             </div>
-
-
         </div>
     )
 }

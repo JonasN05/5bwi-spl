@@ -1,22 +1,35 @@
-import './App.css'
-import PeopleContainer from "./components/PeopleContainer.tsx"
+import Header from './components/Header';
+import StudentsPage from './pages/StudentsPage';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import HomeworkPage from './pages/HomeworkPage';
 
 function App() {
 
-  return (
-    <body className="bg-background min-h-[100vh]">
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element:
+        <div className='bg-background min-h-[100vh]'>
+          <div><Header path="homework" title="Homework" /></div>
+          <div><StudentsPage /></div>
+        </div>,
+    },
+    {
+      path: "/homework",
+      element:
+        <div className='bg-background min-h-[100vh]'>
+          <div><Header path="/" title="Studnets" /></div>
+          <div><HomeworkPage /></div>
+        </div>,
+    },
+  ]);
 
-      <header className="flex justify-center h-20 p-20 md:justify-end lg:justify-end">
-        <p className="text-white text-5xl font-headFont md:text-7xl lg:text-7xl">
-          HTL Dornbirn 5bWI
-        </p>
-      </header>
-
-      <div className="w-full p-20">
-        <PeopleContainer />
-      </div>
-    </body >
-  )
+  return <RouterProvider router={router} />;
 }
 
 export default App
+
+
