@@ -12,7 +12,7 @@ function HomeworkContainer(props: Props) {
 
     return (
         <div>
-            <div>
+            <div className='mb-12'>
                 <CreateHomeworkCard supabase={props.supabase}></CreateHomeworkCard>
             </div>
             <div className="grid gap-12 lg:grid-cols-4 md:grid-cols-2">
