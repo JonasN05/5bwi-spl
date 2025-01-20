@@ -12,7 +12,6 @@ type Props = {
 }
 
 
-
 function HomeworkPage(props: Props) {
     const [homeworks, setHomeworks] = useState<Homework[]>([]);
 
@@ -33,7 +32,7 @@ function HomeworkPage(props: Props) {
 
     return (
         <div className="w-full p-20">
-            <HomeworkContainer homeworks={homeworks}></HomeworkContainer>
+            <HomeworkContainer homeworks={homeworks} supabase={supabase}></HomeworkContainer>
         </div>
     );
 }
