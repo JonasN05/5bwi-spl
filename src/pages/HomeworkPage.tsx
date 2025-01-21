@@ -1,4 +1,4 @@
-import { SetStateAction, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { Homework } from "../utils/types/types";
 import HomeworkContainer from "../components/HomeworkContainer";
@@ -16,6 +16,12 @@ function HomeworkPage(props: Props) {
     const [homeworks, setHomeworks] = useState<Homework[]>([]);
 
     useEffect(() => {
+        createCustomHomeworkWithoutDb();
+        //getHomework();
+    }, []);
+
+
+    function createCustomHomeworkWithoutDb() {
         const homework: Homework[] = [
             {
                 id: 1,
@@ -25,10 +31,9 @@ function HomeworkPage(props: Props) {
                 created_at: "01-12-2025",
             }
         ]
-
         setHomeworks(homework);
-        //getHomework();
-    }, []);
+    }
+
 
     async function getHomework() {
         const { data, error } = await supabase.from("homework").select("*");
