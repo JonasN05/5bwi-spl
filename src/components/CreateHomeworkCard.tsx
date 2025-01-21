@@ -25,33 +25,35 @@ const CreateHomeworkCard = (props: Props) => {
     };
 
     return (
-        <div className="min-h-32 rounded-lg bg-backgroundCard p-6 shadow-md">
-            <h2 className="mb-4 text-xl font-bold text-gray-800">Neue Hausaufgabe erstellen</h2>
-            <div className="space-y-4">
+        <div className="mx-auto w-full max-w-full rounded-lg bg-backgroundCard p-4 shadow-md">
+            <h2 className="mb-3 text-lg font-bold text-gray-800 text-left">Neue Hausaufgabe erstellen</h2>
+            <div className="space-y-3">
                 <input
                     type="text"
                     placeholder="Fach"
                     value={subject}
                     onChange={(e) => setSubject(e.target.value)}
-                    className="w-full rounded-md border border-gray-300 bg-white p-2 text-gray-800 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300"
+                    className="w-full rounded-md border border-gray-300 bg-white p-2 text-sm text-gray-800 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300"
                 />
                 <textarea
                     placeholder="Inhalt"
                     value={content}
                     onChange={(e) => setContent(e.target.value)}
-                    className="w-full rounded-md border border-gray-300 bg-white p-2 text-gray-800 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300"
-                    rows={4}
+                    className="w-full rounded-md border border-gray-300 bg-white p-2 text-sm text-gray-800 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300"
+                    rows={3}
                 ></textarea>
                 <input
                     type="date"
                     value={date}
                     onChange={(e) => setDate(e.target.value)}
-                    className="w-full rounded-md border border-gray-300 bg-white p-2 text-gray-800 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300"
+                    className="w-full rounded-md border border-gray-300 bg-white p-2 text-sm text-gray-800 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300"
                 />
                 <CreateHomeworkButton onSave={handleSaveHomework} />
             </div>
         </div>
     );
+
+
 };
 
 export default CreateHomeworkCard;

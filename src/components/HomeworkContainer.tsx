@@ -12,12 +12,12 @@ function HomeworkContainer(props: Props) {
 
     return (
         <div>
-            <div className='mb-12'>
+            <div className='mb-32'>
                 <CreateHomeworkCard supabase={props.supabase}></CreateHomeworkCard>
             </div>
             <div className="grid gap-12 lg:grid-cols-4 md:grid-cols-2">
                 {props.homeworks.map((homework) => (
-                    <HomeworkCard homework={homework}></HomeworkCard>
+                    <HomeworkCard homework={homework} supabase={props.supabase}></HomeworkCard>
                 ))}
             </div>
         </div>

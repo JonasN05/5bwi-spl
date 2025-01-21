@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { Homework } from "../utils/types/types";
 import HomeworkContainer from "../components/HomeworkContainer";
@@ -16,7 +16,18 @@ function HomeworkPage(props: Props) {
     const [homeworks, setHomeworks] = useState<Homework[]>([]);
 
     useEffect(() => {
-        getHomework();
+        const homework: Homework[] = [
+            {
+                id: 1,
+                subject: "BET",
+                content: "Kostenrechnung 4a\n Materialwirtschaft 3",
+                date: "01-19-2025",
+                created_at: "01-12-2025",
+            }
+        ]
+
+        setHomeworks(homework);
+        //getHomework();
     }, []);
 
     async function getHomework() {
@@ -31,7 +42,7 @@ function HomeworkPage(props: Props) {
     }
 
     return (
-        <div className="w-full p-20">
+        <div className="w-full p-20 pt-5">
             <HomeworkContainer homeworks={homeworks} supabase={supabase}></HomeworkContainer>
         </div>
     );
