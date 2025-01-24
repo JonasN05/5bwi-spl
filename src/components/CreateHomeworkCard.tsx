@@ -19,9 +19,9 @@ const CreateHomeworkCard = (props: Props) => {
         console.log("Inhalt:", content);
         console.log("Datum:", date);
 
-        // const { error } = await props.supabase
-        //     .from('homework')
-        //     .insert({ subject: subject, content: content, date: date });
+        const { error } = await props.supabase
+            .from('homework')
+            .insert({ subject: subject, content: content, date: date });
     };
 
     return (

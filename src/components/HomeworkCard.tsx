@@ -10,8 +10,8 @@ type Props = {
 const HomeworkCard = (props: Props) => {
 
     const deleteCard = async () => {
-        // const response = await props.supabase.from('homework').delete().eq('id', props.homework.id);
-        // console.log(response);
+        const response = await props.supabase.from('homework').delete().eq('id', props.homework.id);
+        console.log(response);
         console.log(props.homework.id);
     };
 

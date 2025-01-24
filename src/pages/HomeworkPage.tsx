@@ -16,9 +16,9 @@ function HomeworkPage(props: Props) {
     const [homeworks, setHomeworks] = useState<Homework[]>([]);
 
     useEffect(() => {
-        createCustomHomeworkWithoutDb();
-        //getHomework();
-    }, []);
+        //createCustomHomeworkWithoutDb();
+        getHomework();
+    }, [homeworks]);
 
 
     function createCustomHomeworkWithoutDb() {
