@@ -5,7 +5,8 @@ import HomeworkCard from './HomeworkCard'
 
 type Props = {
     homeworks: Homework[],
-    supabase: SupabaseClient;
+    supabase: SupabaseClient,
+    isChanged: Function;
 }
 
 function HomeworkContainer(props: Props) {
@@ -13,11 +14,11 @@ function HomeworkContainer(props: Props) {
     return (
         <div>
             <div className='mb-32'>
-                <CreateHomeworkCard supabase={props.supabase}></CreateHomeworkCard>
+                <CreateHomeworkCard supabase={props.supabase} isChanged={props.isChanged}></CreateHomeworkCard>
             </div>
             <div className="grid gap-12 lg:grid-cols-4 md:grid-cols-2">
                 {props.homeworks.map((homework) => (
-                    <HomeworkCard homework={homework} supabase={props.supabase}></HomeworkCard>
+                    <HomeworkCard homework={homework} supabase={props.supabase} isChanged={props.isChanged}></HomeworkCard>
                 ))}
             </div>
         </div>

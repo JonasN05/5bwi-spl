@@ -14,11 +14,12 @@ type Props = {
 
 function HomeworkPage(props: Props) {
     const [homeworks, setHomeworks] = useState<Homework[]>([]);
+    const [changed, isChanged] = useState(false);
 
     useEffect(() => {
         //createCustomHomeworkWithoutDb();
         getHomework();
-    }, [homeworks]);
+    }, [changed]);
 
 
     function createCustomHomeworkWithoutDb() {
@@ -48,7 +49,7 @@ function HomeworkPage(props: Props) {
 
     return (
         <div className="w-full p-20 pt-5">
-            <HomeworkContainer homeworks={homeworks} supabase={supabase}></HomeworkContainer>
+            <HomeworkContainer homeworks={homeworks} supabase={supabase} isChanged={isChanged}></HomeworkContainer>
         </div>
     );
 }

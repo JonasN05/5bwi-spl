@@ -5,6 +5,7 @@ import { SupabaseClient } from "@supabase/supabase-js";
 
 type Props = {
     supabase: SupabaseClient,
+    isChanged: Function,
 };
 
 const CreateHomeworkCard = (props: Props) => {
@@ -22,6 +23,9 @@ const CreateHomeworkCard = (props: Props) => {
         const { error } = await props.supabase
             .from('homework')
             .insert({ subject: subject, content: content, date: date });
+
+        props.isChanged((prev: boolean) => !prev);
+
     };
 
     return (

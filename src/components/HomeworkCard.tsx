@@ -5,6 +5,7 @@ import DeleteHomeworkButton from "./DeleteHomeworkButton";
 type Props = {
     homework: Homework;
     supabase: SupabaseClient;
+    isChanged: Function;
 };
 
 const HomeworkCard = (props: Props) => {
@@ -13,6 +14,7 @@ const HomeworkCard = (props: Props) => {
         const response = await props.supabase.from('homework').delete().eq('id', props.homework.id);
         console.log(response);
         console.log(props.homework.id);
+        props.isChanged((prev: boolean) => !prev);
     };
 
     return (
